@@ -11,17 +11,6 @@ class Product extends Component {
         }
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {value: 0};
-    
-    
-    this.handleChange = this.handleChange.bind(this);
-}
-    handleChange (event) {
-        this.setState({value: event.target.value});
-    }
-
     render() {
         const { name, price, currency, image, url, quantity, isInCart } = this.props;
 
@@ -32,15 +21,7 @@ class Product extends Component {
                     <h3>
                         <a href={url}>{name}</a>
                     </h3>
-                    <form>
-                         <div class="form-group">
-                            <label for="quantity">Quantity:</label>
-                            <input type="number" 
-                                   value={this.state.value}
-                                   onChange={this.handleChange}
-                                   class="form-control"></input>
-                         </div>
-                    </form>     
+                    <div>Quantity:{quantity}</div>                             
                     <div className="product__price">{currency} {price} </div>
 
                     <div className="product__button-wrap">
